@@ -64,11 +64,13 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 
 [My LinkedIn page](www.linkedin.com/in/gustav-hugo-bøe-ab16473b3)
 
-### Help given from _ChatGPT_ and _Google AI Mode(Search results)_\*\*
+### Help given from AI
 
 > **(Code snippets are marked in files as well)**
-> ChatGPT Mon 8. June 12:10am
+> _ChatGPT_ Mon 8. June 12:10am
 > -Help with explaining npm errors, turned out to not affect the project.
+> _ChatGPT and CoPilot_ Mon 8. June 12:45am
+> -Help with setting up react-router-dom, alias paths and fixing deprecated error.
 
 ## Author
 
