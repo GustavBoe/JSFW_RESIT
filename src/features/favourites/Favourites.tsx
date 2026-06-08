@@ -1,7 +1,7 @@
 export default function Favourites() {
   return (
     <section>
-      <h1>Genres</h1>
+      <h1>Favourites</h1>
     </section>
   );
 }
