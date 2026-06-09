@@ -4,7 +4,7 @@ export function GenrePill({ genre }: { genre: string }) {
     <Link
       to={"/genres"}
       state={genre}
-      className="pl-1 pr-1 border rounded-xl text-[8px] text-[#3e3e3e] hover:border-white hover:text-white">
+      className="pl-1 pr-1 border rounded-xl text-[8px] border-white text-white hover:border-2 hover:font-medium">
       {genre}
     </Link>
   );
