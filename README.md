@@ -71,6 +71,8 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 > -Help with explaining npm errors, turned out to not affect the project.
 > _ChatGPT and CoPilot_ Mon 8. June 12:45am
 > -Help with setting up react-router-dom, alias paths and fixing deprecated error.
+> _CoPilot_ Tue 9. June 13:50am
+> -Help with figuring out which type GenrePill component should be
 
 ## Author
 

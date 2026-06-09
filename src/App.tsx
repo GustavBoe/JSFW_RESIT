@@ -8,7 +8,7 @@ function App() {
     <div>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="game" element={<Specific />} />
+        <Route path="game/:gameId" element={<Specific />} />
         <Route path="genres" element={<Genres />} />
         <Route path="favourites" element={<Favourites />} />
       </Routes>
