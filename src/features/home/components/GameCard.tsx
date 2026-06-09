@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { GenrePill } from "./GenrePill";
+import { GenrePill } from "@/features/home/components/GenrePill";
 
 type Image = {
   url: string;
@@ -18,7 +18,7 @@ export function GameCard({ ...game }: SingleGame) {
   const genreList = game.genre.map((genre) => <GenrePill genre={genre} />);
   return (
     <Link to={`/game/${game.id}`}>
-      <div className="flex flex-col items-center rounded-md w-50 h-60  bg-[#4d9bdf] hover:bg-[#60abec] shadow-[#345c80] hover:drop-shadow-lg group">
+      <div className="flex flex-col items-center rounded-md w-50 h-60  bg-[#4d9bdf] hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
         <h3 className="border-b-2 w-full text-center text-white font-medium">
           {game.name}
         </h3>
