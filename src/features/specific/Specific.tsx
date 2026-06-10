@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Loader } from "lucide-react";
+import { Loader, Heart } from "lucide-react";
 import getSpecificGame from "./services/specificGameAPI";
 import type { SingleGame } from "../home/components/GameCard";
 import { GenrePill } from "@/features/home/components/GenrePill";
@@ -10,6 +10,7 @@ export default function Specific() {
   const gameId = params.gameId;
   const [isLoading, setIsLoading] = useState(false);
   const [game, setGame] = useState<SingleGame>();
+  const [favourite, setFavourite] = useState(false);
 
   useEffect(() => {
     console.log("Effect ran with gameId:", gameId);
@@ -43,6 +44,15 @@ export default function Specific() {
           <div className="flex flex-col items-center border h-screen min-h-fit w-[80%] mt-10 pt-10">
             <img src={game?.image.url} alt={game?.image.alt} className="w-80" />
             <h1>{game?.name}</h1>
+            <div
+              onClick={() => setFavourite((prev) => !prev)}
+              className={
+                !favourite ?
+                  "absolute top-2 right-2 bg-white/70 p-1 rounded-md"
+                : "absolute top-2 right-2 bg-[#d54848] text-white p-1 rounded-md"
+              }>
+              <Heart />
+            </div>
 
             <div className="flex flex-col items-center p-5 w-[80%]">
               <h3>Description</h3>

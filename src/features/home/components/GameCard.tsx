@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router";
-import { Heart } from "lucide-react";
+
 import { GenrePill } from "@/features/home/components/GenrePill";
 
 type Image = {
@@ -17,7 +16,6 @@ export type SingleGame = {
   genre: string[];
 };
 export function GameCard({ ...game }: SingleGame) {
-  const [favourite, setFavourite] = useState(false);
   const genreList = game.genre.map((genre) => <GenrePill genre={genre} />);
   return (
     <Link to={`/game/${game.id}`}>
@@ -34,15 +32,6 @@ export function GameCard({ ...game }: SingleGame) {
             className="w-full h-full object-cover rounded-b-md group"
           />
 
-          <div
-            onClick={() => setFavourite(true)}
-            className={
-              !favourite ?
-                "absolute top-2 right-2 bg-white/70 p-1 rounded-md"
-              : "absolute top-2 right-2 bg-[#d54848] p-1 rounded-md"
-            }>
-            <Heart />
-          </div>
           <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-[#4d9bdf] group-hover:bg-[#60abec] border-t-2">
             <div className=" pl-1 flex flex-row items-center gap-2">
               {genreList}
