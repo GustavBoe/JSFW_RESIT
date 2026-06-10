@@ -1,8 +1,7 @@
+import { API_URL } from "@/const";
 export default async function getSpecificGame(gameId: string | undefined) {
   try {
-    const response = await fetch(
-      `https://v2.api.noroff.dev/old-games/${gameId}`,
-    );
+    const response = await fetch(API_URL + `/${gameId}`);
     const data = await response.json();
 
     if (!response.ok) {

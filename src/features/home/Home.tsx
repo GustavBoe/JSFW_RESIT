@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import getAllGames from "./services/allGamesAPI";
+import getAllGames from "@/features/home/services/allGamesAPI";
 import { Loader } from "lucide-react";
-import { GameCard } from "./components/GameCard";
-import type { SingleGame } from "./components/GameCard";
+import { GameCard } from "@/features/home/components/GameCard";
+import type { SingleGame } from "@/features/home/components/GameCard";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
