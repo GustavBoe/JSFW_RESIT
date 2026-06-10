@@ -21,7 +21,6 @@ export default function Home() {
         const gameData = await getAllGames();
 
         setGames(gameData.data ?? []);
-        //setMeta(gameData.meta ?? {});
       } catch (error) {
         alert("Could not get games, see console for details");
         console.log(error);

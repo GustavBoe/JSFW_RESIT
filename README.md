@@ -73,6 +73,8 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 > -Help with setting up react-router-dom, alias paths and fixing deprecated error.
 > _CoPilot_ Tue 9. June 13:50am
 > -Help with figuring out which type GenrePill component should be
+> _CoPilot_ Wed 10.June 08:40am
+> -Help with type error explaining.
 
 ## Author
 
