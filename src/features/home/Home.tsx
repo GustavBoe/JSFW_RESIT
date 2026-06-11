@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section id="top" className="min-h-screen border mx-auto">
+    <section id="top" className="min-h-screen mx-auto">
       {isLoading ?
         <div className="flex flex-col items-center mx-auto pt-50">
           <p className="animate-bounce text-xl text-primary font-medium">
@@ -58,7 +58,7 @@ export default function Home() {
               <button onClick={() => setSort("name")}>Name</button>
             </div>
           </div>
-          <section className="max-w-120 md:max-w-170 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center mx-auto border ">
+          <section className="max-w-120 md:max-w-170 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center mx-auto ">
             {sort === "all" ?
               games.map((game) => <GameCard key={game.id} {...game} />)
             : null}
