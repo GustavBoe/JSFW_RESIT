@@ -1,12 +1,16 @@
 import { useState, useEffect, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 import getAllGames from "@/features/home/services/allGamesAPI";
 import { Loader } from "lucide-react";
 import type { SingleGame } from "@/features/home/components/GameCard";
 import { GameCard } from "@/features/home/components/GameCard";
 export default function Genres() {
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [games, setGames] = useState<SingleGame[]>([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState(() =>
+    location.state ? String(location.state) : "all",
+  );
 
   useEffect(() => {
     const loadGames = async () => {
@@ -25,18 +29,7 @@ export default function Genres() {
     };
     loadGames();
   }, []);
-  {
-    /*const uniqueGenres = useMemo(() => {
-    if (games.length === 0) return [""];
-    const genresSet = new Set();
-    games.forEach((game) => {
-      if (Array.isArray(game.genre))
-        game.genre.forEach((g) => genresSet.add(g));
-      else if (game.genre) genresSet.add(game.genre);
-    });
-    return ["", ...Array.from(genresSet).sort()];
-  }, [games]);*/
-  }
+
   const processedGames = useMemo(() => {
     let gamesToProcess = [...games];
 
@@ -51,6 +44,7 @@ export default function Genres() {
 
     return gamesToProcess;
   }, [games, selectedGenre]);
+
   return (
     <section className="w-full">
       {isLoading ?
