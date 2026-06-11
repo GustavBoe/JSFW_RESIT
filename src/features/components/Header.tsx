@@ -22,12 +22,15 @@ export default function Header() {
   return (
     <nav
       ref={wrapperRef}
-      className="flex flex-row items-center relative md:flex md:justify-between  h-15 border-b border-border text-primary">
+      className="flex flex-row items-center relative md:flex md:justify-between w-full h-15 border-b border-border text-primary">
       <div className="flex items-center justify-between px-7 w-full text-xs">
         <Link to={"/"} className=" text-3xl text-primary">
           Pastimes
         </Link>
-        <div className="hidden md:flex items-center gap-6 "></div>
+        <div className="hidden md:flex items-center gap-6 ">
+          <Link to={"/favourites"}>My favourites</Link>
+          <Link to={"/genres"}>Genres</Link>
+        </div>
 
         <button
           className="md:hidden flex flex-col hover:cursor-pointer"
@@ -43,7 +46,10 @@ export default function Header() {
         {isOpen && (
           <div
             onClick={(e) => e.stopPropagation()}
-            className="md:hidden flex flex-col items-center absolute top-full text-lg left-0 w-full z-50 shadow-lg  bg-white border-t border-b-5  border-border hover:cursor-pointer"></div>
+            className="md:hidden flex flex-col items-center absolute top-full text-lg left-0 w-full z-50 shadow-lg  bg-white border-t border-b-5  border-border hover:cursor-pointer">
+            <Link to={"/favourites"}>My favourites</Link>
+            <Link to={"/genres"}>Genres</Link>
+          </div>
         )}
       </div>
     </nav>

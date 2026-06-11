@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import { Loader, Heart } from "lucide-react";
 import getSpecificGame from "./services/specificGameAPI";
+import useFavouriteStore from "@/stores/favouriteStore";
 import type { SingleGame } from "../home/components/GameCard";
 import { GenrePill } from "@/features/home/components/GenrePill";
 
@@ -10,10 +11,13 @@ export default function Specific() {
   const gameId = params.gameId;
   const [isLoading, setIsLoading] = useState(false);
   const [game, setGame] = useState<SingleGame>();
-  const [favourite, setFavourite] = useState(false);
+  const { favouritedGames, addGame, removeGame } = useFavouriteStore();
+
+  const isFavourite = favouritedGames.some(
+    (favouriteGame) => favouriteGame.id === game?.id,
+  );
 
   useEffect(() => {
-    console.log("Effect ran with gameId:", gameId);
     const loadSpecific = async () => {
       try {
         setIsLoading(true);
@@ -47,12 +51,14 @@ export default function Specific() {
               <h1>{game?.name}</h1>
               <div className="flex items-center">
                 <h2>
-                  {!favourite ? "Set as favourite" : "Remove from favourites"}
+                  {!isFavourite ? "Set as favourite" : "Remove from favourites"}
                 </h2>
                 <div
-                  onClick={() => setFavourite((prev) => !prev)}
+                  onClick={() =>
+                    isFavourite ? removeGame(game!.id) : addGame(game!)
+                  }
                   className={
-                    !favourite ?
+                    !isFavourite ?
                       "bg-white/70 p-1 rounded-md"
                     : "bg-[#d54848] text-white p-1 rounded-md"
                   }>

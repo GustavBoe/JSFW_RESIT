@@ -25,7 +25,7 @@ function GameSearch({ games }: GameSearchProps) {
     return gamesToSearch;
   }, [games, searchTerm]);
   return (
-    <div className="border flex flex-col items-center w-150 ">
+    <div className="border flex flex-col items-center w-[70%]">
       <label htmlFor="gameSearch">Search games</label>
       <input
         type="text"
