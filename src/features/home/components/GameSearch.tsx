@@ -25,18 +25,17 @@ function GameSearch({ games }: GameSearchProps) {
     return gamesToSearch;
   }, [games, searchTerm]);
   return (
-    <div>
-      <div className="flex flex-col">
-        <label htmlFor="gameSearch">Search games</label>
-        <input
-          type="text"
-          id="gameSearch"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-1 pl-2 border rounded-lg w-40"
-        />
-      </div>
-      <div>
+    <div className="border flex flex-col items-center w-150 ">
+      <label htmlFor="gameSearch">Search games</label>
+      <input
+        type="text"
+        id="gameSearch"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="p-1 pl-2 border rounded-lg w-40"
+      />
+
+      <div className="z-50  flex flex-col justify-items-center  mx-auto">
         {searchedGames.map((game) => (
           <SearchCard key={game.id} {...game} />
         ))}

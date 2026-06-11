@@ -67,16 +67,18 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 ### Help given from AI
 
 > **(Code snippets are marked in files as well)**
-> _ChatGPT_ Mon 8. June 12:10am
+> _ChatGPT_ Mon 8. June 12:10
 > -Help with explaining npm errors, turned out to not affect the project.
-> _ChatGPT and CoPilot_ Mon 8. June 12:45am
+> _ChatGPT and CoPilot_ Mon 8. June 12:45
 > -Help with setting up react-router-dom, alias paths and fixing deprecated error.
-> _CoPilot_ Tue 9. June 13:50am
+> _CoPilot_ Tue 9. June 13:50
 > -Help with figuring out which type GenrePill component should be
-> _CoPilot_ Wed 10.June 08:40am
+> _CoPilot_ Wed 10.June 08:40
 > -Help with type error explaining.
-> _ChatGPT and CoPilot_ Fri 12.June 10:55am
+> _ChatGPT and CoPilot_ Thu 11.June 10:55
 > -Help with error explaining on search bar component.
+> _ChatGPT_ Thu 11.June 15:30
+> -Help with types/interfaces for Zustand store
 
 ## Author
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
-
 import { Loader, Heart } from "lucide-react";
 import getSpecificGame from "./services/specificGameAPI";
 import type { SingleGame } from "../home/components/GameCard";
@@ -44,15 +43,22 @@ export default function Specific() {
       : <section className="flex flex-col items-center">
           <div className="flex flex-col items-center border h-screen min-h-fit w-[80%] mt-10 pt-10">
             <img src={game?.image.url} alt={game?.image.alt} className="w-80" />
-            <h1>{game?.name}</h1>
-            <div
-              onClick={() => setFavourite((prev) => !prev)}
-              className={
-                !favourite ?
-                  "absolute top-2 right-2 bg-white/70 p-1 rounded-md"
-                : "absolute top-2 right-2 bg-[#d54848] text-white p-1 rounded-md"
-              }>
-              <Heart />
+            <div className="flex flex-col items-center text-center">
+              <h1>{game?.name}</h1>
+              <div className="flex items-center">
+                <h2>
+                  {!favourite ? "Set as favourite" : "Remove from favourites"}
+                </h2>
+                <div
+                  onClick={() => setFavourite((prev) => !prev)}
+                  className={
+                    !favourite ?
+                      "bg-white/70 p-1 rounded-md"
+                    : "bg-[#d54848] text-white p-1 rounded-md"
+                  }>
+                  <Heart />
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col items-center p-5 w-[80%]">
