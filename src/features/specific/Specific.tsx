@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
+
 import { Loader, Heart } from "lucide-react";
 import getSpecificGame from "./services/specificGameAPI";
 import type { SingleGame } from "../home/components/GameCard";
@@ -75,8 +76,8 @@ export default function Specific() {
               </div>
             </div>
             <div className="flex flex-row w-full justify-around">
-              <button>Back to home</button>
-              <button>Browse genres</button>
+              <Link to={"/"}>Back to home</Link>
+              <Link to={"/genres"}>Browse genres</Link>
             </div>
           </div>
         </section>

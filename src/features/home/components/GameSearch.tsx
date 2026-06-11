@@ -1,19 +1,48 @@
 import { useState, useMemo } from "react";
 import type { SingleGame } from "./GameCard";
+import { SearchCard } from "./SearchCard";
 
-function GameSearch() {
-  const [games] = useState(allGames);
+type GameSearchProps = {
+  games: SingleGame[];
+};
+
+function GameSearch({ games }: GameSearchProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
   const searchedGames = useMemo(() => {
+    let gamesToSearch = [...games];
     if (!searchTerm.trim()) {
-      return games;
+      return [];
+    } else {
+      const lowerSearchTerm = searchTerm.toLowerCase();
+      gamesToSearch = gamesToSearch.filter(
+        (game) =>
+          game.name.toLowerCase().includes(lowerSearchTerm) ||
+          (game.description &&
+            game.description.toLowerCase().includes(lowerSearchTerm)),
+      );
     }
-  });
+    return gamesToSearch;
+  }, [games, searchTerm]);
+  return (
+    <div>
+      <div className="flex flex-col">
+        <label htmlFor="gameSearch">Search games</label>
+        <input
+          type="text"
+          id="gameSearch"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="p-1 pl-2 border rounded-lg w-40"
+        />
+      </div>
+      <div>
+        {searchedGames.map((game) => (
+          <SearchCard key={game.id} {...game} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default GameSearch;

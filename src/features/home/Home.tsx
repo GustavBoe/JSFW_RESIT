@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import getAllGames from "@/features/home/services/allGamesAPI";
 import { Loader } from "lucide-react";
+import GameSearch from "./components/GameSearch";
 import { GameCard } from "@/features/home/components/GameCard";
 import type { SingleGame } from "@/features/home/components/GameCard";
 
@@ -49,7 +50,8 @@ export default function Home() {
           <Loader size={48} />
         </div>
       : <div>
-          <div className="flex flex-col items-center mb-10">
+          <div className="flex flex-col items-center mb-10 ">
+            <GameSearch games={games} />
             <div className="w-50 flex flex-row justify-around">
               <button onClick={() => setSort("all")}>All</button>
               <button onClick={() => setSort("year")}>Released</button>

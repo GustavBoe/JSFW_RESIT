@@ -75,6 +75,8 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 > -Help with figuring out which type GenrePill component should be
 > _CoPilot_ Wed 10.June 08:40am
 > -Help with type error explaining.
+> _ChatGPT and CoPilot_ Fri 12.June 10:55am
+> -Help with error explaining on search bar component.
 
 ## Author
 
