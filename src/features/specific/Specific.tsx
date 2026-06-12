@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
+import { toast } from "react-hot-toast";
 import { Loader, Heart } from "lucide-react";
 import getSpecificGame from "./services/specificGameAPI";
 import useFavouriteStore from "@/stores/favouriteStore";
 import type { SingleGame } from "../home/components/GameCard";
 import { GenrePill } from "@/features/home/components/GenrePill";
+import AddedToast from "@/features/components/toasts/AddedToast";
+import RemovedToast from "@/features/components/toasts/RemovedToast";
 
 export default function Specific() {
   const params = useParams();
@@ -54,9 +57,15 @@ export default function Specific() {
                   {!isFavourite ? "Set as favourite" : "Remove from favourites"}
                 </h2>
                 <div
-                  onClick={() =>
-                    isFavourite ? removeGame(game!.id) : addGame(game!)
-                  }
+                  onClick={() => {
+                    if (!isFavourite) {
+                      addGame(game!);
+                      toast.custom(() => <AddedToast name={game!.name} />);
+                    } else {
+                      removeGame(game!.id);
+                      toast.custom(() => <RemovedToast name={game!.name} />);
+                    }
+                  }}
                   className={
                     !isFavourite ?
                       "bg-white/70 p-1 rounded-md"
