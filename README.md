@@ -3,6 +3,7 @@
 ## Pastime
 
 **Pastime is a game catalogue containing all your favourite games from the past**
+**pastimegames.netlify.app**
 
 <hr/>
 
@@ -63,6 +64,11 @@ Go to  http://localhost:5173/ in your preferred browser to see the app
 ## Contact
 
 [My LinkedIn page](www.linkedin.com/in/gustav-hugo-bøe-ab16473b3)
+
+### Acknowledgements
+
+**The toasts for the site is from react-hot-toast**
+_https://react-hot-toast.com/_
 
 ### Help given from AI
 

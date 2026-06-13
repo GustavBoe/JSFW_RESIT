@@ -25,17 +25,20 @@ function GameSearch({ games }: GameSearchProps) {
     return gamesToSearch;
   }, [games, searchTerm]);
   return (
-    <div className=" flex flex-col justify-items-center rounded-">
-      <label htmlFor="gameSearch">Search games</label>
+    <div className=" flex flex-col justify-items-center ">
+      <label htmlFor="gameSearch" className="font-heading">
+        Search games
+      </label>
       <input
         type="text"
         id="gameSearch"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-1 pl-2 border border-olive-400 rounded-md w-40 bg-white text-black inset-2"
+        className="p-1 pl-2 border border-olive-400 rounded-md w-40 bg-white text-black inset-2 font-paragraph"
+        placeholder="Prince of ...?"
       />
 
-      <div className="z-50 flex flex-col absolute top-57 inset-x-0 items-center justify-items-center group [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
+      <div className="z-50 flex flex-col absolute top-57 md:top-40 inset-x-0 md:inset-x-auto md:right-18 items-center justify-items-center group [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
         {searchedGames.map((game) => (
           <SearchCard key={game.id} {...game} />
         ))}

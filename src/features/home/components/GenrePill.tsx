@@ -6,6 +6,7 @@ export function GenrePill({ genre }: { genre: string }) {
 
   return (
     <Link
+      id={genre}
       to={"/genres"}
       state={genre}
       className={

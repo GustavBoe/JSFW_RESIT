@@ -64,8 +64,8 @@ export default function Specific() {
                 }}
                 className={
                   !isFavourite ?
-                    "bg-white/70 p-1 rounded-md"
-                  : "bg-[#d54848] text-white p-1 rounded-md"
+                    "bg-white/70 cursor-pointer p-1 rounded-md"
+                  : "bg-[#d54848] cursor-pointer text-white p-1 rounded-md"
                 }>
                 <Heart />
               </div>
@@ -93,12 +93,14 @@ export default function Specific() {
               </div>
             </div>
             <div className="flex flex-row w-full justify-around mb-10">
-              <Link to={"/"} className="border rounded-md px-5 font-heading">
+              <Link
+                to={"/"}
+                className="border rounded-md px-5 font-heading hover:bg-linear-to-r hover:from-logo hover:to-game hover:text-white">
                 Back to home
               </Link>
               <Link
                 to={"/genres"}
-                className="border rounded-md px-5 font-heading">
+                className="border rounded-md px-5 font-heading hover:text-white hover:bg-linear-to-r hover:from-blue-500 hover:via-green-500 hover:to-red-500">
                 Browse genres
               </Link>
             </div>

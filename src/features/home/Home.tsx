@@ -47,9 +47,9 @@ export default function Home() {
         <ShowLoader />
       : <div>
           <div className="flex flex-col h-40 md:h-auto md:flex-row items-center gap-5 md:justify-between w-full mb-10 mt-10  text-white">
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center font-heading">
               <p>Sort games by</p>
-              <div className=" w-50 flex flex-row justify-around">
+              <div className=" w-50 flex flex-row justify-around ">
                 <button
                   id="all"
                   onClick={() => {
@@ -81,7 +81,7 @@ export default function Home() {
                   }}
                   className={
                     sort == "name" ?
-                      "cursor-pointer font-semibold underline"
+                      "cursor-pointer font-semibold underline font-heading"
                     : "cursor-pointer"
                   }>
                   Name

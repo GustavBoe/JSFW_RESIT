@@ -54,17 +54,17 @@ export function GameCard({ ...game }: SingleGame) {
           }}
           className={
             !isFavourite ?
-              "absolute top-2 right-2 bg-white/70 p-1 rounded-md"
-            : "absolute top-2 right-2 bg-[#d54848] text-white p-1 rounded-md"
+              "absolute cursor-pointer top-2 right-2 bg-white/70 p-1 rounded-md"
+            : "absolute cursor-pointer top-2 right-2 bg-[#d54848] text-white p-1 rounded-md"
           }>
           <Heart />
         </button>
         <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-game group-hover:bg-[#60abec] border-t-2">
-          <div className=" pl-1 flex flex-row items-center gap-2">
+          <div className="pl-1 flex flex-row items-center gap-2 font-heading">
             {genreList}
           </div>
 
-          <p className="pr-1">{game.released}</p>
+          <p className="pr-1 font-heading">{game.released}</p>
         </div>
       </div>
     </div>
