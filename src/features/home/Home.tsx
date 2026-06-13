@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section id="top" className="min-h-screen mx-auto">
+    <section id="top" className="min-h-400 mx-auto">
       {isLoading ?
         <div className="flex flex-col items-center mx-auto pt-50">
           <p className="animate-bounce text-xl text-primary font-medium">
@@ -50,13 +50,16 @@ export default function Home() {
           <Loader size={48} />
         </div>
       : <div>
-          <div className="flex flex-col items-center mb-10 relative ">
-            <GameSearch games={games} />
-            <div className="w-50 flex flex-row justify-around">
-              <button onClick={() => setSort("all")}>All</button>
-              <button onClick={() => setSort("year")}>Released</button>
-              <button onClick={() => setSort("name")}>Name</button>
+          <div className="flex flex-col h-40 md:h-auto md:flex-row items-center gap-5 md:justify-between w-full mb-10 mt-10  text-white">
+            <div className="flex flex-col items-center ">
+              <p>Sort games by</p>
+              <div className=" w-50  flex flex-row justify-around">
+                <button onClick={() => setSort("all")}>All</button>
+                <button onClick={() => setSort("year")}>Released</button>
+                <button onClick={() => setSort("name")}>Name</button>
+              </div>
             </div>
+            <GameSearch games={games} />
           </div>
           <section className="max-w-120 md:max-w-170 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center mx-auto ">
             {sort === "all" ?
@@ -70,14 +73,14 @@ export default function Home() {
             : null}
             <div
               onClick={() => scrollToSection("top")}
-              className="flex flex-col items-center rounded-md w-50 h-60  bg-[#4d9bdf] hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
+              className="flex flex-col items-center rounded-md w-50 h-60  bg-game hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
               <h3 className="border-b-2 w-full text-center text-white font-medium">
                 Coming soon
               </h3>
               <div className="relative w-full h-full overflow-hidden ">
                 {/*Image, genre and release container*/}
                 <div className="w-full h-full object-cover rounded-b-md" />
-                <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-[#4d9bdf] group-hover:bg-[#60abec] border-t-2">
+                <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-game group-hover:bg-[#60abec] border-t-2">
                   <div className=" pl-1 flex flex-row items-center gap-2">
                     More games
                   </div>

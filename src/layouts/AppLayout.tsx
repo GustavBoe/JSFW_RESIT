@@ -6,7 +6,7 @@ export default function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className=" bg-background flex-1 flex flex-col items-center min-h-300">
+      <main className=" bg-background flex-1 flex flex-col items-center ">
         <Outlet />
       </main>
       <Footer />

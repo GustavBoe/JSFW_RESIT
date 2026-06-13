@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 @theme {
   /*Fonts*/
   --font-logo: "press start 2p";
-  --font-heading: "Bungee Shade";
+  --font-heading: "Quantico";
   --font-paragraph: "Montserrat";
 
   /*Colors*/
-  --color-background: #3b7399;
+  --color-background: #1b3546;
   --color-logo: #d50202;
+  --color-game: #4d9bdf;
 }
 @keyframes slideIn {
   from {

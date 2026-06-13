@@ -27,9 +27,11 @@ export function GameCard({ ...game }: SingleGame) {
   );
   const genreList = game.genre.map((genre) => <GenrePill genre={genre} />);
   return (
-    <div className="flex flex-col items-center rounded-md w-50 h-60  bg-[#4d9bdf] hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
+    <div
+      title={game.name}
+      className="flex flex-col items-center rounded-md w-50 h-60  bg-game hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
       <h3 className="border-b-2 w-full text-center text-white font-medium">
-        {game.name}
+        {game.name.slice(0, 25)}
       </h3>
       <div className="relative w-full h-full overflow-hidden ">
         {/*Image, genre and release container*/}
@@ -57,7 +59,7 @@ export function GameCard({ ...game }: SingleGame) {
           }>
           <Heart />
         </button>
-        <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-[#4d9bdf] group-hover:bg-[#60abec] border-t-2">
+        <div className="absolute bottom-0 rounded-b-md flex flex-row justify-between text-white w-full bg-game group-hover:bg-[#60abec] border-t-2">
           <div className=" pl-1 flex flex-row items-center gap-2">
             {genreList}
           </div>
