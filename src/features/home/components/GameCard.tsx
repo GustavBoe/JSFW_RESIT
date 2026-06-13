@@ -30,7 +30,7 @@ export function GameCard({ ...game }: SingleGame) {
     <div
       title={game.name}
       className="flex flex-col items-center rounded-md w-50 h-60  bg-game hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
-      <h3 className="border-b-2 w-full text-center text-white font-medium">
+      <h3 className="border-b-2 w-full text-center text-white font-medium font-heading">
         {game.name.slice(0, 25)}
       </h3>
       <div className="relative w-full h-full overflow-hidden ">

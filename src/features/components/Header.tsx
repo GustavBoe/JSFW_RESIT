@@ -46,9 +46,17 @@ export default function Header() {
         {isOpen && (
           <div
             onClick={(e) => e.stopPropagation()}
-            className="md:hidden flex flex-col items-center absolute top-full text-lg left-0 w-full z-50 shadow-lg  bg-white border-t border-b-5  border-border hover:cursor-pointer">
-            <Link to={"/favourites"}>My favourites</Link>
-            <Link to={"/genres"}>Genres</Link>
+            className="md:hidden flex flex-col items-center justify-around absolute top-full text-lg left-0 w-full z-50 shadow-lg h-30 bg-white border-t border-b-5  border-border hover:cursor-pointer">
+            <Link
+              to={"/favourites"}
+              className="cursor-pointer hover:font-semibold font-heading">
+              My favourites
+            </Link>
+            <Link
+              to={"/genres"}
+              className="cursor-pointer hover:font-semibold font-heading">
+              Genres
+            </Link>
           </div>
         )}
       </div>

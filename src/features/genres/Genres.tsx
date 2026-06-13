@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import getAllGames from "@/features/home/services/allGamesAPI";
-import { Loader } from "lucide-react";
+
 import type { SingleGame } from "@/features/home/components/GameCard";
 import { GameCard } from "@/features/home/components/GameCard";
+import ShowLoader from "../components/ShowLoader";
 export default function Genres() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
@@ -48,12 +49,7 @@ export default function Genres() {
   return (
     <section className="w-full">
       {isLoading ?
-        <div className="flex flex-col items-center mx-auto pt-50">
-          <p className="animate-bounce text-xl text-primary font-medium">
-            Loading games
-          </p>
-          <Loader size={48} />
-        </div>
+        <ShowLoader />
       : <div className="w-full">
           <section className="grid grid-cols-4 gap-0  md:grid-cols-4 md:w-full mx-auto justify-items-center">
             <button

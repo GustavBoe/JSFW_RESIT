@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import getAllGames from "@/features/home/services/allGamesAPI";
-import { Loader } from "lucide-react";
+
+import ShowLoader from "../components/ShowLoader";
 import GameSearch from "./components/GameSearch";
 import { GameCard } from "@/features/home/components/GameCard";
 import type { SingleGame } from "@/features/home/components/GameCard";
@@ -10,11 +11,11 @@ export default function Home() {
   const [games, setGames] = useState<SingleGame[]>([]);
 
   const [sort, setSort] = useState<"all" | "year" | "name">("all");
-
   const sortedByYear = [...games].sort(
     (a, b) => parseInt(a.released) - parseInt(b.released),
   );
   const sortedByName = [...games].sort((a, b) => a.name.localeCompare(b.name));
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -43,20 +44,48 @@ export default function Home() {
   return (
     <section id="top" className="min-h-400 mx-auto">
       {isLoading ?
-        <div className="flex flex-col items-center mx-auto pt-50">
-          <p className="animate-bounce text-xl text-primary font-medium">
-            Loading games
-          </p>
-          <Loader size={48} />
-        </div>
+        <ShowLoader />
       : <div>
           <div className="flex flex-col h-40 md:h-auto md:flex-row items-center gap-5 md:justify-between w-full mb-10 mt-10  text-white">
             <div className="flex flex-col items-center ">
               <p>Sort games by</p>
-              <div className=" w-50  flex flex-row justify-around">
-                <button onClick={() => setSort("all")}>All</button>
-                <button onClick={() => setSort("year")}>Released</button>
-                <button onClick={() => setSort("name")}>Name</button>
+              <div className=" w-50 flex flex-row justify-around">
+                <button
+                  id="all"
+                  onClick={() => {
+                    setSort("all");
+                  }}
+                  className={
+                    sort == "all" ?
+                      "cursor-pointer font-semibold underline"
+                    : "cursor-pointer"
+                  }>
+                  All
+                </button>
+                <button
+                  id="year"
+                  onClick={() => {
+                    setSort("year");
+                  }}
+                  className={
+                    sort == "year" ?
+                      "cursor-pointer font-semibold underline"
+                    : "cursor-pointer"
+                  }>
+                  Released
+                </button>
+                <button
+                  id="name"
+                  onClick={() => {
+                    setSort("name");
+                  }}
+                  className={
+                    sort == "name" ?
+                      "cursor-pointer font-semibold underline"
+                    : "cursor-pointer"
+                  }>
+                  Name
+                </button>
               </div>
             </div>
             <GameSearch games={games} />
@@ -73,7 +102,7 @@ export default function Home() {
             : null}
             <div
               onClick={() => scrollToSection("top")}
-              className="flex flex-col items-center rounded-md w-50 h-60  bg-game hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group">
+              className="flex flex-col items-center rounded-md w-50 h-60  bg-game hover:bg-[#60abec] shadow-[#345c80] shadow-sm hover:shadow-md transition-shadow duration-200 group cursor-pointer">
               <h3 className="border-b-2 w-full text-center text-white font-medium">
                 Coming soon
               </h3>
