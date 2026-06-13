@@ -8,7 +8,7 @@ export default function Favourites() {
 
   return (
     <section className="flex flex-col items-center gap-5 mt-10">
-      <h1 className="text-2xl font-semibold">My favourites</h1>
+      <h1 className="text-2xl font-heading font-semibold">My favourites</h1>
       <div className="max-w-120 md:max-w-170 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center mx-auto ">
         {favouritedGames.map((game) => (
           <div className="flex flex-col">

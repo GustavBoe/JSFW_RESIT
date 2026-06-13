@@ -24,7 +24,7 @@ export default function Header() {
       ref={wrapperRef}
       className="flex flex-row items-center relative md:flex md:justify-between w-full h-15 border-b border-border text-primary">
       <div className="flex items-center justify-between px-7 w-full text-xs">
-        <Link to={"/"} className=" text-3xl text-primary">
+        <Link to={"/"} className="font-logo text-logo text-3xl text-primary">
           Pastimes
         </Link>
         <div className="hidden md:flex items-center gap-6 ">

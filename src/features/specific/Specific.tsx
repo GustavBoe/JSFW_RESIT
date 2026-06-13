@@ -51,7 +51,7 @@ export default function Specific() {
           <div className="flex flex-col items-center border h-screen min-h-fit w-[80%] mt-10 pt-10">
             <img src={game?.image.url} alt={game?.image.alt} className="w-80" />
             <div className="flex flex-col items-center text-center">
-              <h1>{game?.name}</h1>
+              <h1 className="font-heading">{game?.name}</h1>
               <div className="flex items-center">
                 <h2>
                   {!isFavourite ? "Set as favourite" : "Remove from favourites"}

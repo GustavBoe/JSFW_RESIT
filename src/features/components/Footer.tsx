@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <div>Hello</div>;
+  return <div className="h-20 border">Hello</div>;
 }
